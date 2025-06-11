@@ -1,0 +1,6 @@
+{"timestamp":"2025-06-11T08:09:40.945509","level":"info","event":"DAG bundles loaded: dags-folder","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager"}
+{"timestamp":"2025-06-11T08:09:41.908436Z","level":"error","event":"Server indicated the task shouldn't be running anymore. Terminating process","detail":{"detail":{"reason":"not_found","message":"Task Instance not found"}},"logger":"task"}
+{"timestamp":"2025-06-11T08:09:40.947580","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/user_processing.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-06-11T08:09:41.032739","level":"info","event":"Executing: \n        CREATE TABLE IF NOT EXISTS users (\n            id INT PRIMARY KEY,\n            firstname VARCHAR(255),\n            lastname VARCHAR(255),\n            email VARCHAR(255),\n            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP\n        );\n        ","logger":"airflow.task.operators.airflow.providers.common.sql.operators.sql.SQLExecuteQueryOperator"}
+{"timestamp":"2025-06-11T08:09:41.039903","level":"info","event":"Secrets backends loaded for worker","count":1,"backend_classes":["EnvironmentVariablesBackend"],"logger":"supervisor"}
+{"timestamp":"2025-06-11T08:09:41.982085Z","level":"error","event":"Task killed!","logger":"task"}
