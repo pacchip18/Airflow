@@ -48,12 +48,7 @@ def user_processing():
         import csv
         from datetime import datetime
         file_path = '/tmp/user_info.csv'
-        user_info = {
-            "id": 123,
-            "firstname": "John",
-            "lastname": "Doe",
-            "email": "xyz#ymail.com"
-        }
+
         user_info['created_at'] = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         with open(file_path, mode='w', newline='') as file:
             writer = csv.DictWriter(file, fieldnames=user_info.keys())
@@ -67,10 +62,6 @@ def user_processing():
             sql="COPY users FROM STDIN WITH CSV HEADER",
             filename='/tmp/user_info.csv'
         ) 
+    process_user(extract_user(create_table >> is_api_available())) >> store_user()
 
-
-    fake_user =  is_api_available()
-    user_info = extract_user(fake_user)
-    process_user(user_info)
-    store_user()
 user_processing()
